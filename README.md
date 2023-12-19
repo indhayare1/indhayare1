@@ -1,6 +1,6 @@
 💞️
 
-- 👋 Hi, I’m @indhayare1
+- 👋 Hi, I’m @docs page
 - 👀 I’m interested in ...programing language
 - 🌱 I’m currently learning ...python
 - 💞️ I am looking for a course and youth to collaborate
