@@ -1,19 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <title>Wispy Fog</title>
+  <meta charset="UTF-8">
+  <title>Abdalla</title>
+  <style>
+    body {
+      background-color: aliceblue;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
 
-    <!-- Recommended meta tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    h1 {
+      color: royalblue;
+      font-size: 3rem;
+      font-family: 'Times New Roman', sans-serif;
+    }
 
-    <!-- PyScript CSS -->
-    <link rel="stylesheet" href="https://pyscript.net/releases/2023.12.1/core.css">
 
-    <!-- This script tag bootstraps PyScript -->
-    <script type="module" src="https://pyscript.net/releases/2023.12.1/core.js"></script>
+  </style>
 </head>
-<body>
-    <script type="py" src="./main.py" config="./pyscript.toml" terminal></script>
-</body>
+
+
+  <h1>{{name}}</h1>
+  <h2>THIS IS ME <B>ABDULLAH</B> </h2>
+
+
+
+<script>
+  function checkAnswer1() {
+    var answer = document.getElementById("answer1").value;
+    if (answer.toLowerCase() === "aliceblue" || answer.toLowerCase() === "alice blue") {
+      document.getElementById("result1").innerHTML = "Correct!";
+    } else {
+      document.getElementById("result1").innerHTML = "Incorrect. Try again.";
+    }
+  }
+  function checkAnswer2() {
+    var answer = document.getElementById("answer2").value;
+    if (answer.toLowerCase() === "3rem" || answer.toLowerCase() === "3 rem") {
+      document.getElementById("result2").innerHTML = "Correct!";
+    } else {
+      document.getElementById("result2").innerHTML = "Incorrect. Try again.";
+    }
+  }
+  function checkAnswer3() {
+    var answer = document.getElementById("answer3").value;
+    if (answer.toLowerCase() === "500") {
+      document.getElementById("result3").innerHTML = "Correct!";
+    } else {
+      document.getElementById("result3").innerHTML = "Incorrect. Try again.";
+    }
+  }
+  function checkAnswer4() {
+    var answer = document.getElementById("answer4").value;
+    if (answer.toLowerCase() === "arial" || answer.toLowerCase() === "arial, sans-serif" || answer.toLowerCase() === "sans-serif" || answer.toLowerCase() === "sans serif") {
+      document.getElementById("result4").innerHTML = "Correct!";
+    } else {
+      document.getElementById("result4").innerHTML = "Incorrect. Try again.";
+    }
+  }
+</script>
+
 </html>
