@@ -1,1 +1,17 @@
+from flask import Flask, render_template
+import requests
 
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+
+     response = requests.get('https://api.quotable.io/random')
+
+     joke_data = response.json()
+     joke = joke_data['content']
+     abdullahi = joke_data['author']
+     return render_template('index.html', joke=joke, abdullahi = abdullahi)
+
+if __name__ == '__main__':
+    app.run(debug=True)
