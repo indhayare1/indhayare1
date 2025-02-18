@@ -1,0 +1,5 @@
+/project
+  /public
+    index.html
+  /service-worker.js
+  /server.js
