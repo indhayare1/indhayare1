@@ -1,0 +1,27 @@
+name: Extract ZIP File
+
+on:
+  push:
+    paths:
+      - 'push notification_042552.zip'  # Runs when ZIP file is updated
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Extract ZIP File
+      run: |
+        mkdir extracted
+        unzip "push notification_042552.zip" -d extracted/
+
+    - name: Commit Extracted Files
+      run: |
+        git config --global user.name "indhayare1"
+        git config --global user.email "your-email@example.com"
+        git add extracted/
+        git commit -m "Extracted ZIP files"
+        git push origin main
