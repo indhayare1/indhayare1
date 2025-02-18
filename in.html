@@ -19,26 +19,16 @@
         });
 
         async function registerServiceWorker() {
-            if ("serviceWorker" in navigator && "PushManager" in window) {
+            if ("serviceWorker" in navigator) {
                 const registration = await navigator.serviceWorker.register("sw.js");
                 console.log("Service Worker Registered");
 
-                // Send a test notification after 10 seconds
+                // Wait 10 seconds, then send a message to the service worker to show a notification
                 setTimeout(() => {
-                    sendTestNotification();
+                    if (navigator.serviceWorker.controller) {
+                        navigator.serviceWorker.controller.postMessage("showNotification");
+                    }
                 }, 10000);
-            }
-        }
-
-        function sendTestNotification() {
-            if ("serviceWorker" in navigator) {
-                navigator.serviceWorker.ready.then((registration) => {
-                    registration.showNotification("Test Notification", {
-                        body: "This is a test notification after 10 seconds!",
-                        icon: "icon.png",
-                        badge: "badge.png"
-                    });
-                });
             }
         }
     </script>
