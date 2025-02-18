@@ -1,9 +1,7 @@
 self.addEventListener("message", (event) => {
-    if (event.data === "showNotification") {
-        self.registration.showNotification("Test Notification", {
-            body: "This is a test notification after 10 seconds!",
-            icon: "icon.png",
-            badge: "badge.png"
-        });
-    }
+    self.registration.showNotification(event.data, {
+        body: "This is a scheduled notification.",
+        icon: "icon.png",
+        badge: "badge.png"
+    });
 });
