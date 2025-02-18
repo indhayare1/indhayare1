@@ -23,13 +23,21 @@
                 const registration = await navigator.serviceWorker.register("sw.js");
                 console.log("Service Worker Registered");
 
-                // Wait 10 seconds, then send a message to the service worker to show a notification
-                setTimeout(() => {
-                    if (navigator.serviceWorker.controller) {
-                        navigator.serviceWorker.controller.postMessage("showNotification");
-                    }
-                }, 10000);
+                // Schedule 5 notifications at different times
+                scheduleNotification("First Notification (15 sec)", 15000);
+                scheduleNotification("Second Notification (1 min)", 60000);
+                scheduleNotification("Third Notification (5 min)", 5 * 60000);
+                scheduleNotification("Fourth Notification (1 hour)", 60 * 60000);
+                scheduleNotification("Fifth Notification (3 hours)", 3 * 60 * 60000);
             }
+        }
+
+        function scheduleNotification(message, delay) {
+            setTimeout(() => {
+                if (navigator.serviceWorker.controller) {
+                    navigator.serviceWorker.controller.postMessage(message);
+                }
+            }, delay);
         }
     </script>
 </body>
