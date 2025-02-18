@@ -1,10 +1,9 @@
-self.addEventListener("push", (event) => {
-    const options = {
-        body: "New post available! Check it now.",
-        icon: "icon.png",
-        badge: "badge.png"
-    };
-    event.waitUntil(
-        self.registration.showNotification("New Update!", options)
-    );
+self.addEventListener("message", (event) => {
+    if (event.data === "showNotification") {
+        self.registration.showNotification("Test Notification", {
+            body: "This is a test notification after 10 seconds!",
+            icon: "icon.png",
+            badge: "badge.png"
+        });
+    }
 });
